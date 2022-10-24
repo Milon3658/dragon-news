@@ -26,22 +26,13 @@ const Header = () => {
                             style={{ maxHeight: '100px' }}
                             navbarScroll
                         >
-                            <Nav.Link href="#action1">All News</Nav.Link>
+                            <Nav.Link><Link to='/'>All News</Link></Nav.Link>
                             <NavDropdown title="Categories" id="basic-nav-dropdown">
                                 {
-                                    categories.map(category =><NavDropdown.Item href="#action/3.1">{category.name}</NavDropdown.Item>)
+                                    categories.map(category =><NavDropdown.Item><Link to={`/category/${category.id}`}>{category.name}</Link></NavDropdown.Item>)
                                 }
                             </NavDropdown>
                         </Nav>
-                        {/* <Form className="d-flex">
-                            <Form.Control
-                                type="search"
-                                placeholder="Search"
-                                className="me-2"
-                                aria-label="Search"
-                            />
-                            <Button variant="outline-success">Search</Button>
-                        </Form> */}
                     </Navbar.Collapse>
                 </Container>
             </Navbar>

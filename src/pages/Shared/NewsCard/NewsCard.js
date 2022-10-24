@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 import Image from 'react-bootstrap/Image'
@@ -7,7 +6,7 @@ import { FaBookmark, FaShareAlt } from "react-icons/fa";
 
 
 const NewsCard = ({ news }) => {
-    const { _id, title, author, details, image_url, rating, total_view } = news;
+    const { _id, title, author, details, image_url, rating, } = news;
     return (
         <Card className="mb-4">
             <Card.Header className='d-flex justify-content-between align-items-center'>
@@ -17,7 +16,7 @@ const NewsCard = ({ news }) => {
                         style={{ height: '60px' }}
                         roundedCircle
                         className='me-2'
-                        >
+                    >
 
                     </Image>
                     <div>
@@ -42,10 +41,9 @@ const NewsCard = ({ news }) => {
                             <p>{details}</p>
                     }
                 </Card.Text>
-                {/* <Button variant="primary">Go somewhere</Button> */}
             </Card.Body>
-            <Card.Footer className="text-muted">2 days ago</Card.Footer>
         </Card>
+
     );
 };
 
