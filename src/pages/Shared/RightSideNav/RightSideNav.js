@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import { FaGoogle, FaGithub, FaFacebook, FaTwitter, FaWhatsapp, FaInstagram } from 'react-icons/fa';
 import ListGroup from 'react-bootstrap/ListGroup';
+import CarouselFadeExample from '../Carousel/Carousel';
 
 const RightSideNav = () => {
     return (
@@ -19,6 +20,7 @@ const RightSideNav = () => {
                 <ListGroup.Item className='mb-2'><FaInstagram></FaInstagram> Instagram</ListGroup.Item>
                 <ListGroup.Item className='mb-2'>Vestibulum at eros</ListGroup.Item>
             </ListGroup>
+            <CarouselFadeExample></CarouselFadeExample>
         </div>
     );
 };
