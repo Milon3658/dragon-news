@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../layout/Main";
 import Home from '../../pages/Home/Home';
-import Categpry from '../../pages/category/Category';
 import News from '../../pages/News/News';
+import Category from "../../pages/category/Category";
 
 export const router = createBrowserRouter([
     {
@@ -11,11 +11,17 @@ export const router = createBrowserRouter([
         children:[
             {
                 path:'/',
-                element:<Home></Home>
+                element:<Home></Home>,
+                loader:async () => {
+                    return await fetch('http://localhost:5000/news')
+                }
             },
             {
                 path:'/category/:id',
-                element:<Categpry></Categpry>
+                element:<Category></Category>,
+                loader:async({params})=>{
+                    return await fetch(`http://localhost:5000/category/${params.id}`)
+                }
             },
             {
                 path:'/news/:id',
